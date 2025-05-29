@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . '/CelestialBodiesQueries.php';
+
 beforeAll(function() {
   
   /*
@@ -20,7 +22,6 @@ $dbConn = new PDO(
   [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
 );
 
-const GET_DB_TABLES = "select * from information_schema.tables where table_schema ='public' and table_type='BASE TABLE';";
 
 it('should contain the specified tables', function() use ($dbConn){
   $stmt = $dbConn->query(GET_DB_TABLES);
