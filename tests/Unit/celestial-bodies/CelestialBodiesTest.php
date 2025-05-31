@@ -33,3 +33,7 @@ it('should contain the specified tables', function() use ($dbConn){
   // var_dump($res);
   expect($res)->toMatchArray(['galaxy', 'star', 'planet', 'moon']);
 });
+
+/* Since this project focuses more on familiarizing the student with sql syntax, I won't be able to
+test query results since we are not provided sample data and the tasks are redundant (planet table should
+have x rows, moon table should have y rows) so I think there is no need in writing tests for this task */
