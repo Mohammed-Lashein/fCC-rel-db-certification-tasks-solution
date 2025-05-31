@@ -41,3 +41,19 @@ The correct sql :
  alter table star add primary key(id);
  alter table galaxy add column star_id int not null, add foreign key(star_id) references star(id);
 ```
+____
+
+**Note 4**
+- How to rename a primary key?
+```sql
+-- 1. Drop the 1st pkey
+-- The cascade is so important since that the moon table has an fkey that depends on planet pkey
+-- and yes I wrote 'an' instead of 'a' since we pronounce fkey as 'if key'
+alter table planet drop constraint planet_pkey cascade;
+
+-- 2. Add the pkey with the desired name
+alter table planet add constraint planet_id primary key(id);
+
+-- 3. (Optional) return the fkey in the moon table
+alter table moon add foreign key(planet_id) references planet(id);
+```
