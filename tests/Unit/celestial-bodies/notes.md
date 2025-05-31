@@ -28,7 +28,7 @@ ____
 - How to create a column in a table and make that column a foreign key in one sql command ?
 => There is 1 gotcha and that is we need to make the connecting col in the other table as **unique** or a **pk** in order to be able to refer to it in the foreign key constraint (The code is much clearer than the description :) .  
 
-so how can I alter the id col in the star table ?
+so how can I alter the id col in the star table ?  
 wrong commands : 
 ```sql
 alter table star alter column id add constraint primary key;
